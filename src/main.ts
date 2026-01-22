@@ -12,7 +12,7 @@ async function bootstrap() {
   });
 
   await app.listen();
-  console.log('🏥 Doctor Specialties microservice running on port 5004');
+  console.log('Doctor Specialties microservice running on port 5004');
 }
 
 bootstrap();
