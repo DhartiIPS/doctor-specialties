@@ -1,10 +1,10 @@
-import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn } from 'typeorm';
 
 @Entity('doctor_specialties')
 export class DoctorSpecialty {
   @PrimaryGeneratedColumn()
-  id: number;
+  specialty_id: number;
 
-  @Column({ unique: true })
-  name: string;
+  @Column()
+  name: string; 
 }

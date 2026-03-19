@@ -20,7 +20,7 @@ export class DoctorSpecialtyService {
   }
 
   async updateSpecialty(id: number, name: string) {
-    const specialty = await this.specialtyRepo.findOne({ where: { id } });
+    const specialty = await this.specialtyRepo.findOne({ where: { specialty_id: id } });
     if (!specialty) throw new NotFoundException('Specialty not found');
 
     specialty.name = name;
@@ -28,7 +28,7 @@ export class DoctorSpecialtyService {
   }
 
   async deleteSpecialty(id: number) {
-    const specialty = await this.specialtyRepo.findOne({ where: { id } });
+    const specialty = await this.specialtyRepo.findOne({ where: { specialty_id: id } });
     if (!specialty) throw new NotFoundException('Specialty not found');
 
     await this.specialtyRepo.delete(id);
